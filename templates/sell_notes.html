@@ -1,1 +1,30 @@
-{% extends "base.html" %}{% block content %}<div class="bg-notes" style="padding:40px;"><div class="overlay" style="max-width:550px;margin:auto;"><h2>Sell Notes - Bas 3 Cheez</h2><form method="POST"><input name="title" placeholder="Notes Title e.g. DBMS Complete" required><input name="subject" placeholder="Notes Subject" required><input name="semester" placeholder="Semester e.g. 3rd Sem" required><input name="student_name" placeholder="Your Name (Student Name)" required><input name="price" type="number" placeholder="Price ₹" required><textarea name="description" placeholder="Description"></textarea><input name="contact" placeholder="Contact" required><button class="btn-gold" type="submit">Sell Notes</button></form></div></div>{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-box" style="max-width:650px; margin:30px auto;">
+<h1 style="color:#FFD700; font-family:Georgia,serif; font-size:32px; text-align:center;">Sell Notes - Bas 3 Cheez</h1>
+<p style="text-align:center; color:#ccc; margin-bottom:20px;">Apne notes becho, paisa kamao</p>
+
+<form method="POST">
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+<input class="gold-input" name="title" placeholder="Notes Title e.g. DBMS Complete" required>
+<input class="gold-input" name="subject" placeholder="Notes Subject" required>
+<input class="gold-input" name="semester" placeholder="Semester e.g. 3rd Sem" required>
+</div>
+
+<textarea class="gold-input" name="description" placeholder="Description - kya kya hai notes me?" rows="3" required></textarea>
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+<input class="gold-input" name="student_name" placeholder="Your Name (Student Name)" required>
+<input class="gold-input" name="price" type="number" placeholder="Price ₹" required>
+</div>
+
+<input class="gold-input" name="contact" placeholder="Contact - WhatsApp / Email" required>
+
+<button class="gold-btn" style="width:100%; padding:14px; font-size:16px; margin-top:10px;">Sell Notes ✨</button>
+</form>
+
+<div style="text-align:center; margin-top:15px;">
+<a href="/notes" style="color:#FFD700; text-decoration:none;">Back to Notes Market</a>
+</div>
+</div>
+{% endblock %}
