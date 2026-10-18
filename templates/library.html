@@ -1,29 +1,76 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="main-box">
-<h2>📚 Library Management</h2>
-<p>Book Add, Issue, Return Status, ₹100/Day Fine System</p>
-<a href="/add_book" class="gold-btn" style="width:100%; margin:10px 0;">+ Add New Book</a>
+<style>
+.lib-wrap{max-width:1200px; margin:10px auto; padding:0 15px;}
+.lib-top{color:#ccc; font-size:14px; margin-bottom:12px;}
+.gold-pill{background: linear-gradient(90deg,#F5D76E,#D4AF37); color:#000; border:none; padding:8px 18px; border-radius:20px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block;}
+.book-card{background: rgba(20,20,20,0.9); border:1px solid rgba(255,215,0,0.2); border-radius:16px; padding:18px; width:310px;}
+.book-card h3{margin:0; color:#fff; font-size:18px;}
+.book-card p{margin:4px 0; color:#ccc; font-size:13px;}
+.issue-row{display:flex; gap:8px; margin-top:12px;}
+.issue-row input{flex:1; background:#f5f5dc; border:none; border-radius:10px; padding:10px 12px; font-size:13px; outline:none;}
+.issue-row button{background: linear-gradient(90deg,#F5D76E,#D4AF37); border:none; border-radius:18px; padding:8px 16px; font-weight:700; cursor:pointer;}
+.history-box{background: rgba(15,15,15,0.85); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:15px; margin-top:25px;}
+.history-box table{width:100%; border-collapse:collapse; color:#ddd; font-size:14px;}
+.history-box th{color:#aaa; text-align:left; padding:10px 8px; font-weight:600;}
+.history-box td{padding:10px 8px; border-top:1px solid #222;}
+</style>
 
-<h3>Available Books</h3>
-{% for book in books %}
-<div style="background:rgba(255,255,255,0.1); padding:15px; border-radius:15px; margin-bottom:12px;">
-<b>{{ book.title }}</b><br>Author: {{ book.author }}<br>ISBN: {{ book.isbn }}<br>Qty: {{ book.available }}/{{ book.total }}
-<div class="two-btns" style="display:flex; gap:10px; margin-top:10px;">
-<input placeholder="Student Name" style="flex:1;">
-<a class="gold-btn">Issue</a>
+<div class="lib-wrap">
+<div class="lib-top">Book Add, Issue, Return Status, ₹100/Day Fine System</div>
+
+<a href="/add_book" class="gold-pill">+ Add New Book</a>
+
+<h3 style="color:#fff; margin:18px 0 12px 0;">Available Books ({{ books|length }})</h3>
+
+<div style="display:flex; gap:16px; flex-wrap:wrap;">
+{% for b in books %}
+<div class="book-card">
+<h3>{{ b['title'] }}</h3>
+<p>Author: {{ b['author'] }}</p>
+<p>ISBN: {{ b['isbn'] }} | Qty: {{ b['available'] }}/{{ b['quantity'] }}</p>
+<form method="POST" action="/library/issue" class="issue-row">
+<input type="hidden" name="book_id" value="{{ b['id'] }}">
+<input name="student_name" placeholder="Student Name jisko Issue karni" required>
+<button type="submit">Issue</button>
+</form>
 </div>
-</div>
+{% else %}
+<p style="color:#888;">No books. Add one!</p>
 {% endfor %}
+</div>
 
-<h3>Issued History - Kaunsi Book Kis Bache Ko</h3>
-<div class="table-wrapper">
+<div class="history-box">
+<h3 style="color:#fff; margin:0 0 12px 0; font-size:16px;">Issued History - Kaunsi Book Kis Bache Ko</h3>
 <table>
-<tr><th>Book</th><th>Student</th><th>Issue Date</th><th>Due Date</th><th>Status</th><th>Fine</th><th>Action</th></tr>
-{% for h in issued %}
-<tr><td>{{ h.book_title }}</td><td>{{ h.student }}</td><td>{{ h.issue_date }}</td><td>{{ h.due_date }}</td><td>{{ h.status }}</td><td>₹{{ h.fine }}</td><td><a class="gold-btn">Return</a></td></tr>
+<tr>
+<th>Book</th><th>Student</th><th>Issue Date</th><th>Due Date</th><th>Status</th><th>Fine</th><th>Action</th>
+</tr>
+{% for i in issued %}
+<tr>
+<td style="color:#fff;">{{ i['title'] }}</td>
+<td style="color:#fff; font-weight:600;">{{ i['student_name'] }}</td>
+<td>{{ i['issue_date'] }}</td>
+<td>{{ i['due_date'] }}</td>
+<td>
+{% if i['status']=='issued' %}
+<span style="color:#ff8a65;">issued</span>
+{% else %}
+<span style="color:#66bb6a;">returned</span>
+{% endif %}
+</td>
+<td style="color:#ff6b6b;">₹{{ i['fine'] or 0 }}</td>
+<td>
+{% if i['status']=='issued' %}
+<a href="/library/return/{{ i['id'] }}" class="gold-pill" style="padding:5px 14px; font-size:12px; text-decoration:none;">Return</a>
+{% else %}
+<span style="color:#888;">Returned</span>
+{% endif %}
+</td>
+</tr>
 {% endfor %}
 </table>
 </div>
+
 </div>
 {% endblock %}
