@@ -183,8 +183,6 @@ def notes_page():
     items=conn.execute("SELECT * FROM notes ORDER BY id DESC").fetchall()
     conn.close()
     return render_template('notes.html', items=items)
-
-@app.route('/notes/sell', methods=['GET','POST'])
 @app.route('/sell_notes', methods=['GET','POST'])
 @login_required
 def sell_notes():
