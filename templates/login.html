@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="main-box" style="max-width:400px;">
-<h2>Login</h2>
-<form method="POST" style="display:flex; flex-direction:column; gap:12px;">
-<input name="username" placeholder="Username / Email" required>
-<input name="password" type="password" placeholder="Password" required>
-<div style="text-align:right; margin-top:-5px;">
-<a href="/forgot_password" style="color:#f5d76e; font-size:14px; text-decoration:none;">Forgot Password?</a>
-</div>
-<button class="gold-btn" type="submit">Login</button>
+<div class="main-box" style="max-width:420px; text-align:center;">
+<h2 style="color:#FFD700; font-weight:900; font-size:36px; margin-bottom:20px;">Login</h2>
+
+<form method="POST">
+<input class="gold-input" name="email" type="email" placeholder="Email" required>
+<input class="gold-input" name="password" type="password" placeholder="Password" required>
+<button class="gold-btn" style="width:100%; padding:13px; font-size:16px;">Login</button>
 </form>
-<div style="text-align:center; margin-top:15px; font-size:14px;">
-<p>Account nahi hai? <a href="/register" style="color:#f5d76e; text-decoration:none; font-weight:bold;">Register karo</a></p>
+
+<div style="margin-top:18px; display:flex; flex-direction:column; gap:10px;">
+<a href="/register" style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,215,0,0.3); color:#FFD700; padding:11px; border-radius:30px; text-decoration:none; font-weight:700; font-size:14px; text-align:center;">Create New Account - Register</a>
+
+<a href="/forgot_password" style="width:100%; color:#aaa; text-decoration:none; font-size:13px; margin-top:4px;">Forgot Password? <span style="color:#FFD700;">Reset Here</span></a>
 </div>
+
 </div>
 {% endblock %}
