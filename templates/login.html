@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-box" style="max-width:400px;">
+<h2>Login</h2>
+<form method="POST" style="display:flex; flex-direction:column; gap:12px;">
+<input name="username" placeholder="Username / Email" required>
+<input name="password" type="password" placeholder="Password" required>
+<div style="text-align:right; margin-top:-5px;">
+<a href="/forgot-password" style="color:#f5d76e; font-size:14px; text-decoration:none;">Forgot Password?</a>
+</div>
+<button class="gold-btn" type="submit">Login</button>
+</form>
+</div>
+{% endblock %}

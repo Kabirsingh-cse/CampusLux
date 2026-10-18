@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusLux</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+body { margin:0; font-family: Arial; background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; min-height:100vh; }
+.navbar { display:flex; flex-wrap:wrap; gap:10px; padding:15px; background:rgba(0,0,0,0.3); }
+.navbar a { color:gold; text-decoration:none; font-weight:bold; padding:5px 10px; }
+.main-box { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding:25px; border-radius:20px; width:85%; max-width:1000px; margin:20px auto; }
+.gold-btn { background: linear-gradient(90deg, #f5d76e, #f7ca18); color:black; border:none; padding:10px 20px; border-radius:25px; font-weight:bold; cursor:pointer; text-decoration:none; display:inline-block; text-align:center; }
+input { padding:10px; border-radius:8px; border:none; }
+table th, table td { padding:10px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.1); }
+</style>
+</head>
+<body>
+<div class="navbar">
+  <a href="/">Home</a>
+  <a href="/library">Library</a>
+  <a href="/mentors">Mentors</a>
+  <a href="/notes">Notes Market</a>
+  <a href="/login">Login</a>
+</div>
+{% with messages = get_flashed_messages() %}{% if messages %}{% for msg in messages %}<p style="text-align:center; color:gold;">{{ msg }}</p>{% endfor %}{% endif %}{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>

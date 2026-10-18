@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-box">
+<h2>📚 Library Management</h2>
+<p>Book Add, Issue, Return Status, ₹100/Day Fine System</p>
+<a href="/add_book" class="gold-btn" style="width:100%; margin:10px 0;">+ Add New Book</a>
+
+<h3>Available Books</h3>
+{% for book in books %}
+<div style="background:rgba(255,255,255,0.1); padding:15px; border-radius:15px; margin-bottom:12px;">
+<b>{{ book.title }}</b><br>Author: {{ book.author }}<br>ISBN: {{ book.isbn }}<br>Qty: {{ book.available }}/{{ book.total }}
+<div class="two-btns" style="display:flex; gap:10px; margin-top:10px;">
+<input placeholder="Student Name" style="flex:1;">
+<a class="gold-btn">Issue</a>
+</div>
+</div>
+{% endfor %}
+
+<h3>Issued History - Kaunsi Book Kis Bache Ko</h3>
+<div class="table-wrapper">
+<table>
+<tr><th>Book</th><th>Student</th><th>Issue Date</th><th>Due Date</th><th>Status</th><th>Fine</th><th>Action</th></tr>
+{% for h in issued %}
+<tr><td>{{ h.book_title }}</td><td>{{ h.student }}</td><td>{{ h.issue_date }}</td><td>{{ h.due_date }}</td><td>{{ h.status }}</td><td>₹{{ h.fine }}</td><td><a class="gold-btn">Return</a></td></tr>
+{% endfor %}
+</table>
+</div>
+</div>
+{% endblock %}

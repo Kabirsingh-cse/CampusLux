@@ -1,0 +1,13 @@
+/* FINAL RESPONSIVE FIX - Mobile Tablet Laptop */
+* { box-sizing: border-box; }
+.table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius:12px; }
+.table-wrapper table { min-width: 650px; width: 100%; }
+
+@media (max-width: 768px) {
+  body { padding: 10px !important; }
+  .main-box, .container, .card, .box { width: 95% !important; padding: 15px !important; margin: 10px auto !important; }
+  .gold-btn, button, .btn { width: 100% !important; margin-bottom: 10px; padding: 12px !important; }
+  input, select, textarea { width: 100% !important; }
+  .two-btns { display: flex !important; flex-direction: column !important; gap: 12px !important; }
+  h2 { font-size: 20px !important; }
+}
