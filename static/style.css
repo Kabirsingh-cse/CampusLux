@@ -1,13 +1,13 @@
-/* FINAL RESPONSIVE FIX - Mobile Tablet Laptop */
-* { box-sizing: border-box; }
-.table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius:12px; }
-.table-wrapper table { min-width: 650px; width: 100%; }
-
-@media (max-width: 768px) {
-  body { padding: 10px !important; }
-  .main-box, .container, .card, .box { width: 95% !important; padding: 15px !important; margin: 10px auto !important; }
-  .gold-btn, button, .btn { width: 100% !important; margin-bottom: 10px; padding: 12px !important; }
-  input, select, textarea { width: 100% !important; }
-  .two-btns { display: flex !important; flex-direction: column !important; gap: 12px !important; }
-  h2 { font-size: 20px !important; }
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui}
+body{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2000') no-repeat center center fixed;background-size:cover;min-height:100vh;color:#fff}
+.navbar{background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,215,0,0.3);padding:14px 22px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
+.brand{color:#FFD700;font-weight:900;letter-spacing:2px;font-size:22px;text-decoration:none}
+.navs{display:flex;gap:22px;align-items:center}.navs a{color:#ddd;text-decoration:none;font-size:14px;font-weight:700}.navs a:hover{color:#FFD700}
+.container{max-width:1200px;margin:0 auto;padding:20px 14px}
+.hero{text-align:center;padding:30px 0}.hero h1{font-family:Georgia,serif;font-size:52px;font-weight:900;color:#F5D76E;line-height:1.1;text-shadow:0 4px 20px #000}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
+.lux-card{background:linear-gradient(135deg,rgba(25,25,25,0.95),rgba(55,42,10,0.95));border:1px solid rgba(255,215,0,0.25);border-radius:22px;padding:26px;box-shadow:0 15px 40px rgba(0,0,0,0.5)}
+.gold-btn{background:linear-gradient(90deg,#F7E27B,#E8A623);color:#000;font-weight:800;border:none;border-radius:30px;padding:11px 20px;text-decoration:none;display:inline-block;cursor:pointer}
+.gold-input{width:100%;padding:13px 15px;border-radius:12px;border:none;background:#FFF9C4;color:#111;margin-bottom:12px;font-weight:600}
+.main-box{background:rgba(14,14,14,0.88);backdrop-filter:blur(16px);border:1px solid rgba(255,215,0,0.22);border-radius:22px;padding:24px;margin:18px auto}
+@media(max-width:900px){.card-grid{grid-template-columns:1fr}.hero h1{font-size:30px}}

@@ -1,16 +1,22 @@
-{% extends "base.html" %}{% block content %}
-<div style="text-align:center;padding:20px 15px;">
-<h1 style="font-family:'Playfair Display';font-size:42px;color:#d4af37;margin:10px 0;">Galgotias<br>Campus Ecosystem</h1>
-<p style="opacity:0.7; font-size:13px;">Kabir Singh | CSE | 3 Module Luxury App</p>
-
-<div class="grid-3" style="margin-top:25px; text-align:left;">
-<div class="card bg-lib"><div class="overlay"><h2>📚 LIBRARY</h2><p style="font-size:28px;font-weight:800;margin:5px 0;">{{books}} Books</p><p style="font-size:13px;opacity:0.8;">{{issued_count}} Issued | ₹100/Day Fine</p><a href="/library"><button class="btn-gold">Manage Library</button></a></div></div>
-<div class="card bg-mentor"><div class="overlay"><h2>🤝 MENTORS</h2><p style="font-size:28px;font-weight:800;margin:5px 0;">{{mentors}} Mentors</p><p style="font-size:13px;opacity:0.8;">Senior + Junior Connect</p><a href="/mentors"><button class="btn-gold">Mentor Hub</button></a></div></div>
-<div class="card bg-notes"><div class="overlay"><h2>📝 NOTES</h2><p style="font-size:28px;font-weight:800;margin:5px 0;">{{notes}} Notes</p><p style="font-size:13px;opacity:0.8;">Sell / Buy Notes</p><a href="/notes"><button class="btn-gold">Notes Market</button></a></div></div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMPUS LUX</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=9">
+</head>
+<body>
+<div class="navbar">
+<a class="brand" href="/">CAMPUS LUX ✨</a>
+<div class="navs">
+<a href="/">Home</a>
+<a href="/library">Library</a>
+<a href="/mentors">Mentors</a>
+<a href="/notes">Notes Market</a>
+<a href="/login" style="color:#FFD700;">Login</a>
 </div>
-
-<div style="margin-top:30px; padding:15px; background:rgba(212,175,55,0.1); border-radius:15px; border:1px dashed #d4af37;">
-<p style="margin:0; font-size:13px;">✨ <b>Tip:</b> Phone pe bilkul App jaisa chalega. Home Screen pe add kar liya na?</p>
 </div>
-</div>
-{% endblock %}
+<div class="container">{% block content %}{% endblock %}</div>
+</body>
+</html>
