@@ -1,1 +1,37 @@
-{% extends "base.html" %}{% block content %}<div class="bg-mentor" style="padding:40px;"><div class="overlay" style="max-width:550px;margin:auto;"><h2>Senior Mentor Registration</h2><p>Passport Photo + Details</p><form method="POST" enctype="multipart/form-data"><input name="name" placeholder="Full Name" required><input name="branch" placeholder="Branch e.g. CSE" required><input name="year" placeholder="Year e.g. 2023 Passout / 4th Year" required><select name="status" required><option>Currently Pursuing</option><option>Passout</option><option>Alumni</option></select><input type="file" name="photo" accept="image/*" required><small>Passport Size Photo</small><input name="skills" placeholder="Skills e.g. DSA, Placement Guidance" required><input name="contact" placeholder="WhatsApp / Email" required><button class="btn-gold" type="submit">Register as Mentor</button></form></div></div>{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-box" style="max-width:600px; margin:30px auto;">
+<h1 style="color:#FFD700; font-family:Georgia,serif; font-size:32px; text-align:center;">Senior Mentor Registration</h1>
+<p style="text-align:center; color:#ccc; margin-bottom:20px;">Passport Photo + Details</p>
+
+<form method="POST" enctype="multipart/form-data">
+<input class="gold-input" name="name" placeholder="Full Name" required>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+<input class="gold-input" name="branch" placeholder="Branch e.g. CSE" required>
+<input class="gold-input" name="year" placeholder="Year e.g. 2023 Passout / 4th" required>
+</div>
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+<select class="gold-input" name="status" required>
+<option value="">Select Status</option>
+<option>Currently Pursuing</option>
+<option>Passout / Placed</option>
+<option>Alumni</option>
+</select>
+<div>
+<input type="file" name="photo" id="photo" style="display:none;" accept="image/*">
+<label for="photo" style="display:block; background:#FFF9C4; color:#111; padding:13px; border-radius:12px; font-weight:600; cursor:pointer; text-align:center;">Choose Passport Photo</label>
+</div>
+</div>
+
+<input class="gold-input" name="skills" placeholder="Skills e.g. DSA, Placement, Internship" required>
+<input class="gold-input" name="contact" placeholder="WhatsApp / Email" required>
+
+<button class="gold-btn" style="width:100%; padding:14px; font-size:16px; margin-top:10px;">Register as Mentor ✨</button>
+</form>
+
+<div style="text-align:center; margin-top:15px;">
+<a href="/mentors" style="color:#FFD700; text-decoration:none;">Back to Mentors</a>
+</div>
+</div>
+{% endblock %}
