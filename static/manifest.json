@@ -1,16 +1,1 @@
-{
-  "name": "CampusLUX - Galgotias",
-  "short_name": "CampusLUX",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#d4af37",
-  "icons": [
-    {
-      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzBhMGEwYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBmb250LWZhbWlseT0iUGxheWZhaXIgRGlzcGxheSIgZm9udC1zaXplPSIxODAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNkNGFmMzciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkM8L3RleHQ+PHRleHQgeD0iNTAlIiB5PSI2OCUiIGZvbnQtZmFtaWx5PSJQb3BwaW5zIiBmb250LXNpemU9IjYwIiBmaWxsPSIjZDRhZjM3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5SjPC90ZXh0Pjx0ZXh0IHg9IjUwJSIgeT0iODIlIiBmb250LWZhbWlseT0iUG9wcGlucyIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TEFYPC90ZXh0Pjwvc3ZnPg==",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
-}
+{"name":"CampusLux","short_name":"CampusLux","start_url":"/","display":"standalone","background_color":"#000","theme_color":"#FFD700"}

@@ -1,1 +1,15 @@
-{% extends "base.html" %}{% block content %}<div class="bg-mentor" style="padding:40px;"><div class="overlay" style="max-width:550px;margin:auto;"><h2>Junior Student Registration</h2><form method="POST"><input name="name" placeholder="Your Name" required><input name="branch" placeholder="Branch e.g. CSE 1st Year" required><input name="year" placeholder="Year e.g. 1st Year" required><input name="interest" placeholder="Kis cheez me guidance chahiye? e.g. Coding, Placement" required><input name="contact" placeholder="WhatsApp / Email" required><button class="btn-gold" type="submit">Register as Student</button></form></div></div>{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-box" style="max-width:500px; margin:30px auto; text-align:center;">
+<h1 style="color:#FFD700; font-family:Georgia,serif;">Junior Registration</h1>
+<p style="color:#ccc; margin-bottom:20px;">Find a Senior Mentor</p>
+<form method="POST">
+<input class="gold-input" name="name" placeholder="Full Name" required>
+<input class="gold-input" name="branch" placeholder="Branch" required>
+<input class="gold-input" name="year" placeholder="Year" required>
+<input class="gold-input" name="interest" placeholder="Interest e.g. DSA, Placement" required>
+<input class="gold-input" name="contact" placeholder="WhatsApp / Email" required>
+<button class="gold-btn" style="width:100%; padding:14px;">Register as Junior ✨</button>
+</form>
+</div>
+{% endblock %}

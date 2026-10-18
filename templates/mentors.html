@@ -1,11 +1,1 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="main-box" style="text-align:center;">
-<h2>🤝 Mentor System</h2>
-<p>Senior will guide Junior</p>
-<div class="two-btns" style="display:flex; flex-direction:column; gap:15px; margin-top:20px;">
-<a href="/mentor_senior" class="gold-btn" style="padding:15px;">Senior as Mentor Register</a>
-<a href="/mentor_junior" class="gold-btn" style="padding:15px;">Junior as Student Register</a>
-</div>
-</div>
-{% endblock %}
+{% extends "base.html" %}{% block content %}<div class="main-box"><h2>🤝 Mentor System</h2><div style="display:flex;gap:10px;margin:14px 0;flex-wrap:wrap;"><a href="/mentors/senior" class="gold-btn" style="font-size:12px;">Senior as Mentor Register</a><a href="/mentors/junior" class="gold-btn" style="font-size:12px;">Junior as Student Register</a></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;"><div><h4 style="color:#FFD700;margin-bottom:8px;">Senior Mentors</h4>{% for s in seniors %}<div class="book-card"><b>{{ s.name }} - {{ s.branch }}</b><br><small>{{ s.year }} | {{ s.status }}<br>Skills: {{ s.skills }}<br>Contact: {{ s.contact }}</small>{% if s.photo %}<br><img src="/static/uploads/{{ s.photo }}" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-top:8px;border:2px solid #FFD700;">{% endif %}</div>{% endfor %}</div><div><h4 style="color:#FFD700;margin-bottom:8px;">Junior Students</h4>{% for j in juniors %}<div class="book-card"><b>{{ j.name }}</b><br><small>{{ j.branch }} | {{ j.interest }}</small></div>{% endfor %}</div></div></div>{% endblock %}
